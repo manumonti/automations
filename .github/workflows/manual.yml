@@ -19,17 +19,6 @@ on:
         type: boolean
 
 jobs:
-  discord-notification:
-    runs-on: ubuntu-latest
-    name: Discord Notification
-    steps:
-      - name: Job failure
-        uses: rjstone/discord-webhook-notify@v1
-        if: failure()
-        with:
-          severity: error
-          details: The job failed!
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   print-input:
     runs-on: ubuntu-latest
     steps:
@@ -39,3 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
+      - name: Job failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: The job failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
