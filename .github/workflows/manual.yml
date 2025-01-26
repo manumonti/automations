@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manual Success / Failure Workflow
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -20,11 +20,11 @@ on:
 
 jobs:
   failure:
-    if: ${{ inputs.workflow-result}} == false
+    if: ${{ inputs.workflow-result-success}} == false
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
   success:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Success!"
+      - run: echo "Success! ${{ inputs.workflow-result-success}}"
