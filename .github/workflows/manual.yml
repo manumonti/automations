@@ -24,4 +24,4 @@ jobs:
 
     steps:
     - name: Show success or failure
-      run: echo "::eror::This job failed on purpose"
+      run: exit 1
