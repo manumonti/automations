@@ -27,6 +27,7 @@ jobs:
     if: inputs.generate-failure
     runs-on: ubuntu-latest
     steps:
+      - run: exit 1
       - name: Discord notification on failure
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
@@ -34,4 +35,3 @@ jobs:
           severity: error
           details: The job failed!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - run: exit 1
