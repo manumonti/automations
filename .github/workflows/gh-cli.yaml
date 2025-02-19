@@ -3,9 +3,10 @@ name: Variable Management Using GH CLI
 on: workflow_dispatch
 
 jobs:
-  create_issue:
+  read_variable_list:
     runs-on: ubuntu-latest
-    permissions: read-all
+    permissions:
+      variables: read
     steps:
       - uses: actions/checkout@v4
       - run: gh variable list
