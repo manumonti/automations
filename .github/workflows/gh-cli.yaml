@@ -1,0 +1,13 @@
+name: Variable Management Using GH CLI
+
+on: workflow_dispatch
+
+env:
+  NUMBER_OF_RUNS: ${{ vars.NUMBER_OF_RUNS }}
+
+jobs:
+  print_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Print number of runs of this workflow"
+        run: gh variable list
