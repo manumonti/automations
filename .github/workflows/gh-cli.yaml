@@ -5,8 +5,6 @@ on: workflow_dispatch
 jobs:
   read_variable_list:
     runs-on: ubuntu-latest
-    permissions:
-      variables: read
     steps:
       - uses: actions/checkout@v4
       - run: gh variable list
