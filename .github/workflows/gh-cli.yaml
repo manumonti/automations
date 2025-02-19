@@ -2,8 +2,7 @@ name: Variable Management Using GH CLI
 
 on: workflow_dispatch
 
-env:
-  NUMBER_OF_RUNS: ${{ vars.NUMBER_OF_RUNS }}
+
 
 jobs:
   print_runs:
@@ -11,3 +10,5 @@ jobs:
     steps:
       - name: "Print number of runs of this workflow"
         run: gh variable list
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
