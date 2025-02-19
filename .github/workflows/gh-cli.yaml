@@ -8,6 +8,7 @@ jobs:
   print_runs:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: "Print number of runs of this workflow"
         run: gh variable list
         env:
