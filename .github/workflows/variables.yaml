@@ -1,0 +1,13 @@
+name: Variable Management Workflow
+
+on: workflow_dispatch
+
+env:
+  NUMBER_OF_RUNS: 0
+
+jobs:
+  print_runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Print number of runs of this workflow"
+        run: echo "This workflow has run $NUMBER_OF_RUNS times."
