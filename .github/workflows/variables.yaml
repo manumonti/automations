@@ -12,7 +12,6 @@ jobs:
       - name: "Print number of runs of this workflow"
         run: echo "This workflow has run $NUMBER_OF_RUNS times."
       - name: "Set variable"
-        # run: export NUMBER_OF_RUNS=$((NUMBER_OF_RUNS+1))
-        run: export NUMBER_OF_RUNSS=5
+        run: echo "NUMBER_OF_RUNS=$((NUMBER_OF_RUNS+1))" >> $GITHUB_ENV
       - name: "Print number of runs after increase"
-        run: echo "This workflow has run $NUMBER_OF_RUNSS times."
+        run: echo "This workflow has run $NUMBER_OF_RUNS times."
