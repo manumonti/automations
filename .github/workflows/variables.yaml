@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Print number of runs of this workflow"
-        run: echo "This workflow has run $NUMBER_OF_RUNS times."
+        run: echo "This workflow has run $vars.NUMBER_OF_RUNS times."
