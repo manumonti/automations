@@ -5,13 +5,10 @@ on: workflow_dispatch
 
 
 jobs:
-  print_runs:
+  create_issue:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - name: "Print number of runs of this workflow"
-        run: gh variable list
+      - run: gh issue create --title "My new issue" --body "Here are more details."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
