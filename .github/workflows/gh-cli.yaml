@@ -7,6 +7,8 @@ on: workflow_dispatch
 jobs:
   print_runs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - name: "Print number of runs of this workflow"
