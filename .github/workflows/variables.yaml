@@ -2,14 +2,15 @@ name: Variable Management Workflow
 
 on: workflow_dispatch
 
+env:
+  NUMBER_OF_RUNS: ${{ vars.NUMBER_OF_RUNS }}
+
 jobs:
   print_runs:
     runs-on: ubuntu-latest
     steps:
       - name: "Print number of runs of this workflow"
         run: echo "This workflow has run $NUMBER_OF_RUNS times."
-        env:
-          NUMBER_OF_RUNS: ${{ vars.NUMBER_OF_RUNS }}
       - name: "Set variable"
         run: export NUMBER_OF_RUNS=$((NUMBER_OF_RUNS+1))
       - name: "Print number of runs after increase"
