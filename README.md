@@ -1,6 +1,6 @@
 # Automations
 
-A repo to learn and test how GitHub Actions and other workflows works
+A repo to learn and test how GitHub Actions and other workflows works.
 
 - demo.yaml: basic example of workflow triggered when commits are pushed. It shows some logs.
 - manual-failure.yaml: worflow manually triggered with a boolean parameter input. If this input is
