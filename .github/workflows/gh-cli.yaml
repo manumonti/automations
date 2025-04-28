@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: gh variable list
+      - run: |
+          echo "Reading variables..."
+          echo "${MULTILINE_VAR}"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MULTILINE_VAR: ${{ vars.MULTILINE_VAR }}
 
